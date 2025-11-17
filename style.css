@@ -15,12 +15,46 @@ body{
 }
 
 /* IMAGE (cube) */
+.container{
+    position: relative;
+    width: 100%;
+}
 
 #cube{
     border-radius: 10px;
-    width:100%;
-    margin : auto;
+    display: block;
+    width: 100%;
+    height: auto;
 }
+
+#overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: hsl(178, 100%, 50%);
+  border-radius: 10px;
+}
+
+.container:hover #overlay {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#eye-icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 /* PORTRAIT (author */
 
 #portrait{
@@ -61,9 +95,9 @@ p,#author{
     font-weight: 300;
 }
 
-/* ETH + DISPONIBILITY */ 
+/* DETAILS */ 
 
-#wrapper2{
+#details-wrapper{
     display:flex;
     justify-content: space-between;
     border-bottom: solid 0.5px hsl(215, 51%, 70%);
@@ -99,10 +133,11 @@ h1,em:hover{
 }
 
 
+
 /* MEDIA : MOBILE */
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    #wrapper{
+    #cardWrapper{
         min-width:80%;
         margin-top: 80px;
     }
@@ -111,7 +146,7 @@ h1,em:hover{
 /* MEDIA : TABLETS */
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-    #wrapper{
+    #cardWrapper{
         min-width:80%;
         margin-top: 80px;
     }
